@@ -50,9 +50,11 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 0;
+  double sum = 1;
+    double slog = 0;
     for (uint16_t i = 1; i <= count; ++i) {
-        sum += pown((-1), (i - 1)) * pown(x, (2 * i - 2)) / fact(2 * i - 2);
+        slog = expn(x, (2 * i - 2));
+        sum += pown((-1), (i - 1)) * slog;;
     }
     return sum;
 }
